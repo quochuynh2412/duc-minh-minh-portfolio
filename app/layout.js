@@ -58,7 +58,6 @@ export default function RootLayout({ children }) {
       <body className={oswald.className}>
         <Header />
         {children}
-        <script src="https://player.vimeo.com/api/player.js"></script>
       </body>
     </html>
   )
