@@ -16,7 +16,7 @@ export default function Home() {
                     <Tab label="Music Video">
                         <div className="grid grid-flow-row grid-cols-4 gap-12 px-72">
                             {/* <ProjectPreview url="https://player.vimeo.com/video/847725844" /> */}
-                            {videos.map((video) => (
+                            {videos.filter(video => video.category === 'music').map((video) => (
                                 <div className="col-span-2">
                                     <TestPreview video={video} />
                                 </div>
@@ -27,14 +27,13 @@ export default function Home() {
                     <Tab label="Fashion">
                         <div className="grid grid-flow-row grid-cols-4 gap-12 px-72">
                             {/* <ProjectPreview url="https://player.vimeo.com/video/847725844" /> */}
-                            {videos.map((video) => (
+                            {videos.filter(video => video.category === 'fashion').map((video) => (
                                 <div className="col-span-2">
                                     <TestPreview video={video} />
                                 </div>
 
                             ))}
                         </div>
-                        <span>Tab 2 content</span>
                     </Tab>
                 </Tabs>
             </section>

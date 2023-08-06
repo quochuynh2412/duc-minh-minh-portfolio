@@ -1,12 +1,26 @@
 [
     {
-        "id": "great_minds_think_alike__fashion_film_720p_g9jory",
-        "vimeo_id": "847725286",
+        "title": "\"Great Minds Think Alike\" Fashion Film",
+        "cloudinary_id": "great_minds_think_alike__fashion_film_720p_g9jory",
+        "id": "847725286",
+        "category": "fashion",
+        "channel": "vimeo",
         "format": "mp4"
     },
     {
-        "id": "inside_the_box__promotion_video_720p_lwncps",
-        "vimeo_id": "847725844",
+        "title": "\"Inside The Box\" Promotion Video",
+        "cloudinary_id": "inside_the_box__promotion_video_720p_lwncps",
+        "id": "847725844",
+        "category": "fashion",
+        "channel": "vimeo",
+        "format": "mp4"
+    },
+    {
+        "title": "\"Great Minds Think Alike\" Fashion Film",
+        "cloudinary_id": "inside_the_box__promotion_video_720p_lwncps",
+        "id": "mcCRR-E2ZtU",
+        "category": "music",
+        "channel": "youtube",
         "format": "mp4"
     }
 ]

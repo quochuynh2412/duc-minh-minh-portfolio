@@ -6,9 +6,11 @@
     margin-top: 15vh;
 }
 
-.tabbuttons {
+.tabButtons {
     margin-bottom: 50px;
 }
+
+.tabContent {}
 
 .button {
     font-size: 20px;

@@ -25,20 +25,20 @@ const TestPreview = ({ video }) => {
         <>
             <div className='video' onMouseOver={onMouseOver} onMouseOut={onMouseOut} onClick={() => setOpen(true)}>
                 <AdvancedImage
-                    cldImg={cld.image(video.id).setAssetType('video').delivery('q_auto').format('auto:image')}
+                    cldImg={cld.image(video.cloudinary_id).setAssetType('video').delivery('q_auto').format('auto:image')}
                 />
                 <AdvancedVideo
                     ref={playerRef}
                     loop
                     muted
                     width="100%"
-                    cldVid={cld.video(video.id).effect('e_preview:duration_4').delivery('q_auto').format('auto')}
+                    cldVid={cld.video(video.cloudinary_id).effect('e_preview:duration_4').delivery('q_auto').format('auto')}
                     plugins={[lazyload()]}
                 />
             </div>
             <ModalVideo
-                channel="vimeo"
-                videoId={video.vimeo_id}
+                channel={video.channel}
+                videoId={video.id}
                 isOpen={isOpen}
                 onClose={() => setOpen(false)}
             />

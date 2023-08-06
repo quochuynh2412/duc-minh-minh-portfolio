@@ -20,7 +20,7 @@ export class Tabs extends React.Component {
                 })}
 
                 <TabButtons activeTab={this.state.activeTab} buttons={buttons} changeTab={this.changeTab} />
-                <div className={styles.tab - content}>{content}</div>
+                <div className={styles.tabContent}>{content}</div>
 
             </div>
         );
@@ -30,7 +30,7 @@ export class Tabs extends React.Component {
 export const TabButtons = ({ buttons, changeTab, activeTab }) => {
 
     return (
-        <div className={styles.tabbuttons + " flex justify-center gap-4"}>
+        <div className={styles.tabButtons + " flex justify-center gap-4"}>
             {buttons.map(button => {
                 return <button className={button === activeTab ? styles.button + ' ' + styles.active : styles.button} onClick={() => changeTab(button)}>{button}</button>
             })}
