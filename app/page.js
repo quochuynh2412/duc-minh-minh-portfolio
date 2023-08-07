@@ -1,17 +1,31 @@
 'use client'
 import './styles.css';
-// import AutoplayFullscreenPlayer from '@/components/AutoplayFullscreenPlayer/AutoplayFullscreenPlayer';
-import TestFullScreen from '@/components/TestFullScreen/TestFullScreen';
+import React from 'react';
+import AutoplayFullscreenPlayer from '@/components/AutoplayFullscreenPlayer/AutoplayFullscreenPlayer';
+// import TestFullScreen from '@/components/TestFullScreen/TestFullScreen';
 import VideoPreview from '@/components/VideoPreview/VideoPreview';
 import "react-modal-video/scss/modal-video.scss";
-import videos from '@/data/videos';
+// import videos from '@/data/videos';
 import { Tabs, Tab } from '@/components/Tabs/Tabs';
+import { db } from '@/firebase';
+import { getFirestore, collection, query, where, getDocs } from "firebase/firestore";
 export default function Home() {
+    async function getVideos() {
+        const videos = [];
+        const snapshot = await getDocs(query(collection(db, 'videos'), where('highlighted', '==', true)));
+        snapshot.forEach(doc => {
+            console.log(doc.data());
+            videos.push(doc.data());
+        });
+        return videos;
+    }
+    const [videos, setVideos] = React.useState([]);
+    getVideos().then(videos => setVideos(videos));
     return (
         <>
             <section className='highlight-video'>
-                {/* <AutoplayFullscreenPlayer url="https://player.vimeo.com/video/847725286" /> */}
-                <TestFullScreen video={videos[0]} />
+                <AutoplayFullscreenPlayer url="https://player.vimeo.com/video/847725286" />
+                {/* <TestFullScreen video={videos[0]} /> */}
             </section>
             <section className="videos-preview">
                 <Tabs>
