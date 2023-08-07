@@ -1,16 +1,15 @@
 import { useState, useEffect, useRef } from 'react';
-import Head from 'next/head'
 import { Cloudinary } from '@cloudinary/url-gen';
 import { AdvancedImage, AdvancedVideo, lazyload } from '@cloudinary/react';
 import ModalVideo from 'react-modal-video';
-import './TestPreview.css'
+import './VideoPreview.css'
 const cld = new Cloudinary({
     cloud: {
         cloudName: 'ducminhminh'
     }
 
 });
-const TestPreview = ({ video }) => {
+function VideoPreview({ video }) {
     const playerRef = useRef();
     const [isOpen, setOpen] = useState(false);
     function onMouseOver() {
@@ -25,25 +24,22 @@ const TestPreview = ({ video }) => {
         <>
             <div className='video' onMouseOver={onMouseOver} onMouseOut={onMouseOut} onClick={() => setOpen(true)}>
                 <AdvancedImage
-                    cldImg={cld.image(video.cloudinary_id).setAssetType('video').delivery('q_auto').format('auto:image')}
-                />
+                    cldImg={cld.image(video.cloudinary_id).setAssetType('video').delivery('q_auto').format('auto:image')} />
                 <AdvancedVideo
                     ref={playerRef}
                     loop
                     muted
                     width="100%"
                     cldVid={cld.video(video.cloudinary_id).effect('e_preview:duration_4').delivery('q_auto').format('auto')}
-                    plugins={[lazyload()]}
-                />
+                    plugins={[lazyload()]} />
             </div>
             <ModalVideo
                 channel={video.channel}
                 videoId={video.id}
                 isOpen={isOpen}
-                onClose={() => setOpen(false)}
-            />
+                onClose={() => setOpen(false)} />
         </>
-    )
+    );
 }
 
-export default TestPreview;
+export default VideoPreview;

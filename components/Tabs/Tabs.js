@@ -21,7 +21,6 @@ export class Tabs extends React.Component {
 
                 <TabButtons activeTab={this.state.activeTab} buttons={buttons} changeTab={this.changeTab} />
                 <div className={styles.tabContent}>{content}</div>
-
             </div>
         );
     }

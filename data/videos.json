@@ -5,7 +5,8 @@
         "id": "847725286",
         "category": "fashion",
         "channel": "vimeo",
-        "format": "mp4"
+        "format": "mp4",
+        "highlighted": true
     },
     {
         "title": "\"Inside The Box\" Promotion Video",
@@ -13,7 +14,8 @@
         "id": "847725844",
         "category": "fashion",
         "channel": "vimeo",
-        "format": "mp4"
+        "format": "mp4",
+        "highlighted": true
     },
     {
         "title": "\"Great Minds Think Alike\" Fashion Film",
@@ -21,6 +23,7 @@
         "id": "mcCRR-E2ZtU",
         "category": "music",
         "channel": "youtube",
-        "format": "mp4"
+        "format": "mp4",
+        "highlighted": true
     }
 ]
