@@ -9,6 +9,10 @@
     font-weight: 400;
 }
 
+.logo {
+    padding: 10px;
+}
+
 /* Title */
 .title {
     color: white;

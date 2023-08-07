@@ -1,17 +1,19 @@
-import classes from './Header.module.css';
+import styles from './Header.module.css';
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 export default function Header() {
     return (
-        <div className={classes.header}>
-            <nav className={classes.navbar}>
-                <div className={classes.title}>
-                    <Link href="/">
-                        Duc Minh Minh
+        <div className={styles.header}>
+            <nav className={styles.navbar}>
+                <div className={styles.title}>
+                    <Link href="/"
+                        className='flex flex-row'>
+                        <Image className={styles.logo} src="/DMM.svg" width={50} height={50} alt="logo" />
                     </Link>
                 </div>
                 <div>
-                    <ul className={classes.menu}>
+                    <ul className={styles.menu}>
                         <li>
                             <Link href="/test">Projects</Link>
                         </li>
@@ -24,7 +26,7 @@ export default function Header() {
                     </ul>
                 </div>
             </nav>
-            <div className={classes.scroller} id='scroller'></div>
+            <div className={styles.scroller} id='scroller'></div>
         </div>
     );
 }
