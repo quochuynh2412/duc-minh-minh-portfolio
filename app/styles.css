@@ -3,8 +3,12 @@
     overflow: hidden;
 }
 
-section {
-    margin: 80px 0;
-}
+/* .contact {
+    height: 100vh;
+} */
 
 .video-player {}
+
+#root {
+    display: none;
+}

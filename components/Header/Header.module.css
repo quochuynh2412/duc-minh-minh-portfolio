@@ -42,6 +42,7 @@
 }
 
 .menu li a {
+    font-weight: 500;
     position: relative;
     color: grey;
     transition: color 0.3s ease;

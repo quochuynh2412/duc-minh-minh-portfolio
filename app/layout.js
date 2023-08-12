@@ -59,6 +59,7 @@ export default function RootLayout({ children }) {
       <body className={darkerGrotesque.className}>
         <Header />
         {children}
+        <script src="https://player.vimeo.com/api/player.js"></script>
       </body>
     </html>
   )

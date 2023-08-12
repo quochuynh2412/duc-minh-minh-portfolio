@@ -12,6 +12,8 @@
     "@cloudinary/react": "^1.11.2",
     "@cloudinary/url-gen": "^1.11.1",
     "@react-spring/web": "^9.7.3",
+    "@react-three/drei": "^9.80.2",
+    "@react-three/fiber": "^8.13.6",
     "autoprefixer": "10.4.14",
     "eslint": "8.46.0",
     "eslint-config-next": "13.4.12",
@@ -22,9 +24,11 @@
     "react-dom": "18.2.0",
     "react-modal-video": "^2.0.1",
     "sass": "^1.64.2",
-    "tailwindcss": "3.3.3"
+    "tailwindcss": "3.3.3",
+    "three": "^0.155.0"
   },
   "devDependencies": {
-    "postcss-nesting": "^12.0.1"
+    "postcss-nesting": "^12.0.1",
+    "vite": "^4.4.9"
   }
 }
