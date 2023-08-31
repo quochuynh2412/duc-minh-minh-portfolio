@@ -80,10 +80,8 @@ export default function Home() {
                 </Tabs>
             </section>
             <section className="contact">
-                <div className="grid grid-flow-row grid-cols-2 gap-12 px-72">
-                    <div className="col-span-1">
-                        <h1 className="text-5xl font-bold">Contact</h1>
-                    </div>
+                <div className='flex justify-center text-2xl mb-4 font-bold'>
+                    Contact
                 </div>
             </section>
         </>
