@@ -60,8 +60,8 @@ export default function RootLayout({ children }) {
       <body className={neuemontreal.className}>
         <Header />
         {children}
+        <Script src="https://player.vimeo.com/api/player.js" strategy='beforeInteractive'></Script>
       </body>
-      <Script src="https://player.vimeo.com/api/player.js"></Script>
     </html>
   )
 }
