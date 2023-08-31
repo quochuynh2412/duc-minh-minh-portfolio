@@ -22,7 +22,7 @@ function VideoPreview({ video }) {
 
     return (
         <>
-            <div className='video' onMouseOver={onMouseOver} onMouseOut={onMouseOut} onClick={() => setOpen(true)}>
+            <div className='video m-4' onMouseOver={onMouseOver} onMouseOut={onMouseOut} onClick={() => setOpen(true)}>
                 <AdvancedImage
                     cldImg={cld.image(video.cloudinary_id).setAssetType('video').delivery('q_auto').format('auto:image')} />
                 <AdvancedVideo

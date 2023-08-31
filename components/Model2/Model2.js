@@ -5,8 +5,9 @@ import { useGLTF } from "@react-three/drei";
 export function Model(props) {
     const { nodes, materials } = useGLTF("/camera.glb");
     const material = new THREE.MeshPhysicalMaterial({
-        color: new THREE.Color('#7d7d7d').convertSRGBToLinear(),
-        roughness: 1,
+        color: new THREE.Color('#7b7b7b').convertSRGBToLinear(),
+        roughness: 0,
+        metalness: 0.5,
         clearcoat: 0,
         clearcoatRoughness: 0,
     })

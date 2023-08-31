@@ -1,5 +1,7 @@
 import React from 'react';
 import styles from './Tabs.module.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircle } from '@fortawesome/free-solid-svg-icons';
 export class Tabs extends React.Component {
     state = {
         activeTab: this.props.children[0].props.label
@@ -30,9 +32,18 @@ export const TabButtons = ({ buttons, changeTab, activeTab }) => {
 
     return (
         <div className={styles.tabButtons + " flex justify-center gap-4"}>
-            {buttons.map(button => {
-                return <button className={button === activeTab ? styles.button + ' ' + styles.active : styles.button} onClick={() => changeTab(button)}>{button}</button>
-            })}
+            {buttons.map((button, index) => (
+                <React.Fragment key={index}>
+                    <button className={button === activeTab ? styles.button + ' ' + styles.active : styles.button} onClick={() => changeTab(button)}>{button}</button>
+                    {
+                        index != buttons.length - 1 ?
+                            (<div className="flex items-center text-sm">
+                                {/* <FontAwesomeIcon className={styles.icon} icon={faCircle} /> */}
+                                /
+                            </div>) : null
+                    }
+                </React.Fragment>
+            ))}
         </div>
     )
 }

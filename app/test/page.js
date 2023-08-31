@@ -5,16 +5,31 @@ import { Canvas, useFrame } from '@react-three/fiber'
 import { Reflector, Text, useTexture, useGLTF } from '@react-three/drei'
 import Overlay from '@/components/Overlay/Overlay'
 import { Model } from '@/components/Model2/Model2'
+import { Cloudinary } from '@cloudinary/url-gen'
+import { crop } from "@cloudinary/url-gen/actions/resize";
 import './styles.css'
+const cld = new Cloudinary({
+    cloud: {
+        cloudName: 'ducminhminh'
+    }
 
+});
 function VideoText({ clicked, ...props }) {
-    const [video] = useState(() => Object.assign(document.createElement('video'), { src: '/drei.mp4', crossOrigin: 'Anonymous', loop: true }))
-    useEffect(() => void (clicked && video.play()), [video, clicked])
+    const vidUrl = cld.video("great_minds_think_alike__fashion_film_720p_g9jory").resize(crop().width(1080).aspectRatio(7.5)).setAssetType('video').delivery('q_auto').format('auto').toURL();
+    const [video] = useState(() => Object.assign(document.createElement('video'), { src: vidUrl, crossOrigin: 'Anonymous', loop: true, muted: true }))
+    useEffect(() => {
+        void (clicked && video.play());
+        return;
+    }, [video, clicked])
     return (
         <Text font="/Inter-Bold.woff" fontSize={2} letterSpacing={-0.06} {...props}>
-            ducminhminh
+            ducmvx
             <meshBasicMaterial toneMapped={false}>
-                <videoTexture attach="map" args={[video]} encoding={THREE.sRGBEncoding} />
+                <videoTexture attach="map"
+                    args={[video]}
+                    wrapT={THREE.RepeatWrapping}
+                    wrapS={THREE.RepeatWrapping}
+                    encoding={THREE.sRGBEncoding} />
             </meshBasicMaterial>
         </Text>
     )
@@ -23,13 +38,27 @@ function VideoText({ clicked, ...props }) {
 function Ground() {
     const [floor, normal] = useTexture(['/SurfaceImperfections003_1K_var1.jpg', '/SurfaceImperfections003_1K_Normal.jpg'])
     return (
-        <Reflector blur={[400, 100]} resolution={512} args={[20, 20]} mirror={0.5} mixBlur={6} mixStrength={1.5} rotation={[-Math.PI / 2, 0, Math.PI / 2]}>
+        <Reflector blur={[400, 100]} resolution={512} args={[20, 20]} mirror={0.9} mixBlur={6} mixStrength={1.5} rotation={[-Math.PI / 2, 0, Math.PI / 2]}>
             {(Material, props) => <Material color="#7d7d7d" metalness={0.4} roughnessMap={floor} normalMap={normal} normalScale={[2, 2]} {...props} />}
         </Reflector>
     )
 }
 
-export default function App() {
+function Intro({ start, set }) {
+    const [vec] = useState(() => new THREE.Vector3())
+    useEffect(() => {
+        let timer = setTimeout(() => set(true), 500);
+        return () => clearTimeout(timer);
+    }, [])
+    return useFrame((state) => {
+        if (start) {
+            state.camera.position.lerp(vec.set(state.mouse.x * 5, 3 + state.mouse.y * 2, 14), 0.05)
+            state.camera.lookAt(0, 0, 0)
+        }
+    })
+}
+
+export default function Home() {
     const [clicked, setClicked] = useState(false)
     const [ready, setReady] = useState(false)
     const store = { clicked, setClicked, ready, setReady }
@@ -45,9 +74,9 @@ export default function App() {
                             <VideoText {...store} position={[0, 1.3, -2]} />
                             <Ground />
                         </group>
-                        <ambientLight intensity={0.5} />
-                        <spotLight position={[0, 10, 0]} intensity={0.3} />
-                        <directionalLight position={[-50, 0, -40]} intensity={0.7} />
+                        <ambientLight intensity={1} />
+                        <spotLight position={[0, 10, 0]} intensity={1.2} />
+                        <directionalLight position={[-50, 0, -40]} intensity={2} />
                         <Intro start={ready} set={setReady} />
                     </Suspense>
                 </Canvas>
@@ -55,15 +84,4 @@ export default function App() {
             </section>
         </>
     )
-}
-
-function Intro({ start, set }) {
-    const [vec] = useState(() => new THREE.Vector3())
-    useEffect(() => setTimeout(() => set(true), 500), [])
-    return useFrame((state) => {
-        if (start) {
-            state.camera.position.lerp(vec.set(state.mouse.x * 5, 3 + state.mouse.y * 2, 14), 0.05)
-            state.camera.lookAt(0, 0, 0)
-        }
-    })
 }

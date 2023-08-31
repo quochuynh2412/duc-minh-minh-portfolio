@@ -4,9 +4,8 @@
     top: 0;
     padding: 0 2rem;
     width: 100%;
-    font-size: 22px;
+    font-size: 20px;
     z-index: 200;
-    font-weight: 400;
 }
 
 .logo {
@@ -43,6 +42,7 @@
 
 .menu li a {
     font-weight: 500;
+    font-size: 18px;
     position: relative;
     color: grey;
     transition: color 0.3s ease;
@@ -50,11 +50,11 @@
 }
 
 .menu li a:hover {
-    color: white;
+    color: #ffca3998;
 }
 
 .scroller {
-    position: absolute;
+    /* position: absolute;
     top: 0;
     left: -28px;
     bottom: 0;
@@ -62,7 +62,8 @@
     background-color: rgba(19, 19, 19, .15);
     -webkit-backdrop-filter: blur(6px);
     backdrop-filter: blur(6px);
-    z-index: -1;
+    z-index: -1; */
+    background-color: transparent;
 }
 
 /* Media Query for Smaller Screens */

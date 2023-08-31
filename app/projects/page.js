@@ -13,51 +13,54 @@ export default function Projects() {
     return (
         <>
             <section className="videos-preview">
+                <div className='flex justify-center text-2xl mb-4 font-bold'>
+                    Project Highlights
+                </div>
                 <Tabs>
-                    <Tab label="All">
-                        <div className="grid grid-flow-row grid-cols-4 gap-12 px-72">
+                    <Tab label="all">
+                        <div className="grid grid-flow-row grid-cols-2 gap-12 px-72">
                             {videos.map((video) => (
-                                <div className="col-span-2">
+                                <div className="col-span-1">
                                     <VideoPreview video={video} />
                                 </div>
 
                             ))}
                         </div>
                     </Tab>
-                    <Tab label="Music Video">
-                        <div className="grid grid-flow-row grid-cols-4 gap-12 px-72">
+                    <Tab label="music video">
+                        <div className="grid grid-flow-row grid-cols-2 gap-12 px-72">
                             {videos.filter(video => video.category === 'music').map((video) => (
-                                <div className="col-span-2">
+                                <div className="col-span-1">
                                     <VideoPreview video={video} />
                                 </div>
 
                             ))}
                         </div>
                     </Tab>
-                    <Tab label="Fashion">
-                        <div className="grid grid-flow-row grid-cols-4 gap-12 px-72">
+                    <Tab label="fashion">
+                        <div className="grid grid-flow-row grid-cols-2 gap-12 px-72">
                             {videos.filter(video => video.category === 'fashion').map((video) => (
-                                <div className="col-span-2">
+                                <div className="col-span-1">
                                     <VideoPreview video={video} />
                                 </div>
 
                             ))}
                         </div>
                     </Tab>
-                    <Tab label="Film">
-                        <div className="grid grid-flow-row grid-cols-4 gap-12 px-72">
+                    <Tab label="film">
+                        <div className="grid grid-flow-row grid-cols-2 gap-12 px-72">
                             {videos.filter(video => video.category === 'film').map((video) => (
-                                <div className="col-span-2">
+                                <div className="col-span-1">
                                     <VideoPreview video={video} />
                                 </div>
 
                             ))}
                         </div>
                     </Tab>
-                    <Tab label="Commercial">
-                        <div className="grid grid-flow-row grid-cols-4 gap-12 px-72">
+                    <Tab label="commercial">
+                        <div className="grid grid-flow-row grid-cols-2 gap-12 px-72">
                             {videos.filter(video => video.category === 'commercial').map((video) => (
-                                <div className="col-span-2">
+                                <div className="col-span-1">
                                     <VideoPreview video={video} />
                                 </div>
                             ))}

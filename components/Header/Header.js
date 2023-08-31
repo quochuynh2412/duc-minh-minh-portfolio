@@ -8,20 +8,21 @@ export default function Header() {
             <nav className={styles.navbar}>
                 <div className={styles.title}>
                     <Link href="/"
-                        className='flex flex-row'>
-                        <Image className={styles.logo} src="/DMM.svg" width={50} height={50} alt="logo" />
+                        className='font-bold text-white hover:text-[#FFC939]'>
+                        {/* <Image className={styles.logo} src="/DMM.svg" width={50} height={50} alt="logo" /> */}
+                        ducmvx
                     </Link>
                 </div>
                 <div>
                     <ul className={styles.menu}>
                         <li>
-                            <Link href="/projects">Projects</Link>
+                            <Link href="/projects">projects</Link>
                         </li>
                         <li>
-                            <Link href="/test">About</Link>
+                            <Link href="/test">about</Link>
                         </li>
                         <li>
-                            <Link href="/test">Contact</Link>
+                            <Link href="/test">contact</Link>
                         </li>
                     </ul>
                 </div>

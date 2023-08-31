@@ -56,7 +56,7 @@ const darkerGrotesque = Darker_Grotesque({ subsets: ['latin'] })
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={darkerGrotesque.className}>
+      <body className={neuemontreal.className}>
         <Header />
         {children}
         <script src="https://player.vimeo.com/api/player.js"></script>
