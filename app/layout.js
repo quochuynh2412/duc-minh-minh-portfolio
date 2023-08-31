@@ -2,6 +2,7 @@ import './globals.css'
 import localFont from 'next/font/local'
 import { Inter, Oswald, Darker_Grotesque } from 'next/font/google'
 import Header from '@/components/Header/Header'
+import Script from 'next/script'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -59,8 +60,8 @@ export default function RootLayout({ children }) {
       <body className={neuemontreal.className}>
         <Header />
         {children}
-        <script src="https://player.vimeo.com/api/player.js"></script>
       </body>
+      <Script src="https://player.vimeo.com/api/player.js"></Script>
     </html>
   )
 }

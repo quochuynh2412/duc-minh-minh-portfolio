@@ -19,8 +19,8 @@ export default function Projects() {
                 <Tabs>
                     <Tab label="all">
                         <div className="grid grid-flow-row grid-cols-2 gap-12 px-72">
-                            {videos.map((video) => (
-                                <div className="col-span-1">
+                            {videos.map((video, index) => (
+                                <div className="col-span-1" key={index}>
                                     <VideoPreview video={video} />
                                 </div>
 
@@ -29,8 +29,8 @@ export default function Projects() {
                     </Tab>
                     <Tab label="music video">
                         <div className="grid grid-flow-row grid-cols-2 gap-12 px-72">
-                            {videos.filter(video => video.category === 'music').map((video) => (
-                                <div className="col-span-1">
+                            {videos.filter(video => video.category === 'music').map((video, index) => (
+                                <div className="col-span-1" key={index}>
                                     <VideoPreview video={video} />
                                 </div>
 
@@ -39,8 +39,8 @@ export default function Projects() {
                     </Tab>
                     <Tab label="fashion">
                         <div className="grid grid-flow-row grid-cols-2 gap-12 px-72">
-                            {videos.filter(video => video.category === 'fashion').map((video) => (
-                                <div className="col-span-1">
+                            {videos.filter(video => video.category === 'fashion').map((video, index) => (
+                                <div className="col-span-1" key={index}>
                                     <VideoPreview video={video} />
                                 </div>
 
@@ -49,8 +49,8 @@ export default function Projects() {
                     </Tab>
                     <Tab label="film">
                         <div className="grid grid-flow-row grid-cols-2 gap-12 px-72">
-                            {videos.filter(video => video.category === 'film').map((video) => (
-                                <div className="col-span-1">
+                            {videos.filter(video => video.category === 'film').map((video, index) => (
+                                <div className="col-span-1" key={index}>
                                     <VideoPreview video={video} />
                                 </div>
 
@@ -59,8 +59,8 @@ export default function Projects() {
                     </Tab>
                     <Tab label="commercial">
                         <div className="grid grid-flow-row grid-cols-2 gap-12 px-72">
-                            {videos.filter(video => video.category === 'commercial').map((video) => (
-                                <div className="col-span-1">
+                            {videos.filter(video => video.category === 'commercial').map((video, index) => (
+                                <div className="col-span-1" key={index}>
                                     <VideoPreview video={video} />
                                 </div>
                             ))}

@@ -25,8 +25,8 @@ export default function Home() {
     }, []);
     function mapVids(category) {
         if (category === 'all') {
-            return videos.map((video) => (
-                <div className="col-span-1">
+            return videos.map((video, index) => (
+                <div className="col-span-1" key={index}>
                     <VideoPreview video={video} />
                 </div>
             ));
@@ -38,8 +38,8 @@ export default function Home() {
                 </div>);
             }
             else {
-                return videos.filter(video => video.category.includes(category)).map((video) => (
-                    <div className="col-span-1">
+                return videos.filter(video => video.category.includes(category)).map((video, index) => (
+                    <div className="col-span-1" key={index}>
                         <VideoPreview video={video} />
                     </div>
                 ));
