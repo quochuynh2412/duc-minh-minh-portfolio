@@ -9,6 +9,7 @@ import "react-modal-video/scss/modal-video.scss";
 import { Tabs, Tab } from '@/components/Tabs/Tabs';
 import { db } from '@/firebase/firebase';
 import { collection, query, where, getDocs } from "firebase/firestore";
+import LoadingScreen from '@/components/LoadingScreen/LoadingScreen';
 export default function Home() {
     async function getVideos() {
         const videos = [];
@@ -48,6 +49,7 @@ export default function Home() {
     }
     return (
         <>
+            <LoadingScreen />
             <section className='highlight-video'>
                 <AutoplayFullscreenPlayer url="https://player.vimeo.com/video/847725286" />
                 {/* <TestFullScreen video={videos[0]} /> */}
@@ -58,22 +60,22 @@ export default function Home() {
                 </div>
                 <Tabs>
                     <Tab label="music video">
-                        <div className="grid grid-flow-row grid-cols-2 gap-8 px-72">
+                        <div className="grid grid-flow-row grid-cols-3 gap-3 px-72">
                             {mapVids('music')}
                         </div>
                     </Tab>
                     <Tab label="fashion">
-                        <div className="grid grid-flow-row grid-cols-2 gap-8 px-72">
+                        <div className="grid grid-flow-row grid-cols-3 gap-3 px-72">
                             {mapVids('fashion')}
                         </div>
                     </Tab>
                     <Tab label="film">
-                        <div className="grid grid-flow-row grid-cols-2 gap-8 px-72">
+                        <div className="grid grid-flow-row grid-cols-3 gap-3 px-72">
                             {mapVids('film')}
                         </div>
                     </Tab>
                     <Tab label="commercial">
-                        <div className="grid grid-flow-row grid-cols-2 gap-8 px-72">
+                        <div className="grid grid-flow-row grid-cols-3 gap-3 px-72">
                             {mapVids('commercial')}
                         </div>
                     </Tab>

@@ -5,6 +5,7 @@ import VideoPreview from '@/components/VideoPreview/VideoPreview';
 import { getVideos } from '@/firebase/videos';
 import { useEffect, useState } from 'react';
 import "react-modal-video/scss/modal-video.scss";
+import { mapVids } from '@/util/util';
 export default function Projects() {
     const [videos, setVideos] = useState([]);
     useEffect(() => {
@@ -19,51 +20,27 @@ export default function Projects() {
                 <Tabs>
                     <Tab label="all">
                         <div className="grid grid-flow-row grid-cols-2 gap-12 px-72">
-                            {videos.map((video, index) => (
-                                <div className="col-span-1" key={index}>
-                                    <VideoPreview video={video} />
-                                </div>
-
-                            ))}
+                            {mapVids(videos, 'all')}
                         </div>
                     </Tab>
                     <Tab label="music video">
                         <div className="grid grid-flow-row grid-cols-2 gap-12 px-72">
-                            {videos.filter(video => video.category === 'music').map((video, index) => (
-                                <div className="col-span-1" key={index}>
-                                    <VideoPreview video={video} />
-                                </div>
-
-                            ))}
+                            {mapVids(videos, 'music')}
                         </div>
                     </Tab>
                     <Tab label="fashion">
                         <div className="grid grid-flow-row grid-cols-2 gap-12 px-72">
-                            {videos.filter(video => video.category === 'fashion').map((video, index) => (
-                                <div className="col-span-1" key={index}>
-                                    <VideoPreview video={video} />
-                                </div>
-
-                            ))}
+                            {mapVids(videos, 'fashion')}
                         </div>
                     </Tab>
                     <Tab label="film">
                         <div className="grid grid-flow-row grid-cols-2 gap-12 px-72">
-                            {videos.filter(video => video.category === 'film').map((video, index) => (
-                                <div className="col-span-1" key={index}>
-                                    <VideoPreview video={video} />
-                                </div>
-
-                            ))}
+                            {mapVids(videos, 'film')}
                         </div>
                     </Tab>
                     <Tab label="commercial">
                         <div className="grid grid-flow-row grid-cols-2 gap-12 px-72">
-                            {videos.filter(video => video.category === 'commercial').map((video, index) => (
-                                <div className="col-span-1" key={index}>
-                                    <VideoPreview video={video} />
-                                </div>
-                            ))}
+                            {mapVids(videos, 'commercial')}
                         </div>
                     </Tab>
                 </Tabs>
