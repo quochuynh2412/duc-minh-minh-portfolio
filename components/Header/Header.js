@@ -18,10 +18,10 @@ export default function Header() {
                             <Link href="/projects">projects</Link>
                         </li>
                         <li>
-                            <Link href="/test">about</Link>
+                            <Link href="/contact">about</Link>
                         </li>
                         <li>
-                            <Link href="/test">contact</Link>
+                            <Link href="/contact">contact</Link>
                         </li>
                     </ul>
                 </div>
