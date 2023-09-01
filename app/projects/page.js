@@ -19,27 +19,27 @@ export default function Projects() {
                 </div>
                 <Tabs>
                     <Tab label="all">
-                        <div className="grid grid-flow-row grid-cols-2 gap-12 px-72">
+                        <div className="grid grid-flow-row grid-cols-3 gap-3 px-72">
                             {mapVids(videos, 'all')}
                         </div>
                     </Tab>
                     <Tab label="music video">
-                        <div className="grid grid-flow-row grid-cols-2 gap-12 px-72">
+                        <div className="grid grid-flow-row grid-cols-3 gap-3 px-72">
                             {mapVids(videos, 'music')}
                         </div>
                     </Tab>
                     <Tab label="fashion">
-                        <div className="grid grid-flow-row grid-cols-2 gap-12 px-72">
+                        <div className="grid grid-flow-row grid-cols-3 gap-3 px-72">
                             {mapVids(videos, 'fashion')}
                         </div>
                     </Tab>
                     <Tab label="film">
-                        <div className="grid grid-flow-row grid-cols-2 gap-12 px-72">
+                        <div className="grid grid-flow-row grid-cols-3 gap-3 px-72">
                             {mapVids(videos, 'film')}
                         </div>
                     </Tab>
                     <Tab label="commercial">
-                        <div className="grid grid-flow-row grid-cols-2 gap-12 px-72">
+                        <div className="grid grid-flow-row grid-cols-3 gap-3 px-72">
                             {mapVids(videos, 'commercial')}
                         </div>
                     </Tab>

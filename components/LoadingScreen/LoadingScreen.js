@@ -1,36 +1,20 @@
 'use client'
-import React, { useEffect, createRef } from 'react';
+import React from 'react';
 import styles from './LoadingScreen.module.css';
 import { SpringRef, Controller, animated } from '@react-spring/web'
 export default class LoadingScreen extends React.Component {
-    isShowing = createRef(false)
     api = SpringRef()
-    animations = new Controller({ opacity: 0, ref: this.api })
-    //fade out loading screen after 3 seconds using css styles
-    // useEffect(() => {
-    //     setTimeout(() => {
-    //         this.animations.start({ opacity: this.isShowing ? 1 : 0 })
-    //         this.isShowing = !this.isShowing
-    //         // setLoading(false);
-    //     }, 3000);
-    // }, []);
+    animations = new Controller({ opacity: 1, display: 'block', ref: this.api, config: { duration: 1000 } })
     componentDidMount() {
-        this.animations.start({
-            display: this.isShowing ? 'block' : 'none',
-            opacity: this.isShowing ? 1 : 0,
-        })
-        this.isShowing = !this.isShowing
         setTimeout(() => {
             this.animations.start({
-                opacity: this.isShowing ? 1 : 0,
+                opacity: 0,
                 onRest: () => {
                     this.animations.start({
-                        display: this.isShowing ? 'block' : 'none',
+                        display: 'none',
                     })
                 }
             })
-            this.isShowing = !this.isShowing
-            // setLoading(false);
         }, 3000);
     }
     render() {
