@@ -1,0 +1,27 @@
+.Dino {
+    width: calc(24px * var(--pixel-size));
+    height: calc(24px * var(--pixel-size));
+    overflow: hidden;
+    position: relative;
+}
+
+.DinoSpriteSheet {
+    position: absolute;
+    max-width: none !important;
+    width: calc(576px * var(--pixel-size));
+    height: calc(24px * var(--pixel-size));
+}
+
+.DinoSpriteSheet:hover {
+    animation: moveSpritesheet 3s steps(24) infinite;
+}
+
+@keyframes moveSpritesheet {
+    from {
+        transform: translate3d(0px, 0, 0)
+    }
+
+    to {
+        transform: translate3d(-100%, 0, 0)
+    }
+}

@@ -3,8 +3,11 @@ import React from 'react';
 import styles from './LoadingScreen.module.css';
 import { SpringRef, Controller, animated } from '@react-spring/web'
 export default class LoadingScreen extends React.Component {
+    constructor(props) {
+        super(props);
+    }
     api = SpringRef()
-    animations = new Controller({ opacity: 1, display: 'block', ref: this.api, config: { duration: 1000 } })
+    animations = new Controller({ opacity: 1, display: 'block', ref: this.api, config: { duration: 500 } })
     componentDidMount() {
         setTimeout(() => {
             this.animations.start({
@@ -15,7 +18,7 @@ export default class LoadingScreen extends React.Component {
                     })
                 }
             })
-        }, 3000);
+        }, this.props.duration);
     }
     render() {
         return (
@@ -24,6 +27,7 @@ export default class LoadingScreen extends React.Component {
                     <img src="/dmm-logo.svg" alt="logo" className="w-8 animate-spin" />
                     {/* loading text */}
                     <div className="text-white text-xl font-bold mt-4">Loading</div>
+                    <div className="text-white text-sm font-normal mt-4 sm:hidden">This website performs best on desktop devices</div>
                 </div>
             </animated.div>
         )
