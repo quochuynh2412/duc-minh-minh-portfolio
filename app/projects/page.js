@@ -14,10 +14,10 @@ export default function Projects() {
     }, []);
     return (
         <>
-            <LoadingScreen duration={500} />
+            <LoadingScreen duration={1000} />
             <section className="videos-preview">
                 <div className='flex justify-center text-2xl mb-4 font-bold'>
-                    Project Highlights
+                    Projects
                 </div>
                 <Tabs>
                     <Tab label="all">

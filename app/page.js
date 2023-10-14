@@ -52,7 +52,7 @@ export default function Home() {
     return (
         <>
             <div className='relative'>
-                <LoadingScreen duration={500} />
+                <LoadingScreen duration={1000} />
                 <section className='highlight-video'>
                     <AutoplayFullscreenPlayer url="https://player.vimeo.com/video/847725286" />
                     <ScrollDownIndicator />

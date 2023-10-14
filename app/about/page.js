@@ -4,7 +4,7 @@ import LoadingScreen from '@/components/LoadingScreen/LoadingScreen';
 export default function About() {
     return (
         <>
-            <LoadingScreen duration={500} />
+            <LoadingScreen duration={1000} />
             <section className="about h-screen max-h-screen">
                 <div className='flex justify-center text-2xl mb-4 font-bold'>
                     About Me

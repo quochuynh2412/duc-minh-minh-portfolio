@@ -3,7 +3,7 @@ import LoadingScreen from "@/components/LoadingScreen/LoadingScreen";
 export default function Contact() {
     return (
         <>
-            <LoadingScreen duration={500} />
+            <LoadingScreen duration={1000} />
             <Home />
         </>
     )

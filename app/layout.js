@@ -3,6 +3,7 @@ import localFont from 'next/font/local'
 import { Inter, Oswald, Darker_Grotesque } from 'next/font/google'
 import Header from '@/components/Header/Header'
 import Script from 'next/script'
+import Footer from '@/components/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -59,7 +60,8 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={neuemontreal.className}>
         <Header />
-        {children}
+        <div className='min-h-screen'>{children}</div>
+        <Footer />
         <Script src="https://player.vimeo.com/api/player.js" strategy='beforeInteractive'></Script>
       </body>
     </html>
