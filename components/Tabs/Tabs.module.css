@@ -12,27 +12,6 @@
 
 .tabContent {}
 
-.button {
-    font-size: 18px;
-    font-weight: 500;
-    background: transparent;
-    /* border: 2px solid rgba(255, 255, 255, 0.4); */
-    /* border-radius: 30px; */
-    /* outline: none; */
-    /* padding: 6px 20px 10px 20px; */
-    padding: 8px;
-    cursor: pointer;
-    color: rgba(255, 255, 255, 0.781);
-    transition: all ease-in-out .2s;
-    /* width: 150px; */
-
-    /* border-bottom: 2px solid transparent; */
-    &:hover {
-        /* border: 2px solid rgba(255, 255, 255, 0.7); */
-        color: #ffca3998;
-    }
-}
-
 .active {
     /* border-bottom: 2px solid #42b3f4; */
     /* border: 2px solid rgba(255, 255, 255, 1); */

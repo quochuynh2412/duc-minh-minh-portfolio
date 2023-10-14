@@ -3,6 +3,7 @@
     height: calc(24px * var(--pixel-size));
     overflow: hidden;
     position: relative;
+    display: block;
 }
 
 .DinoSpriteSheet {

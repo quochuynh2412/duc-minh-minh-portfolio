@@ -12,7 +12,6 @@ import { db } from '@/firebase/firebase';
 import { collection, query, where, getDocs } from "firebase/firestore";
 import LoadingScreen from '@/components/LoadingScreen/LoadingScreen';
 import ScrollDownIndicator from '@/components/ScrollDownIndicator/ScrollDownIndicator';
-import Dino from '@/components/Dino';
 export default function Home() {
     async function getVideos() {
         const videos = [];
@@ -61,7 +60,7 @@ export default function Home() {
                 </section>
                 <section className="videos-preview">
                     <div className='flex justify-center text-2xl mb-4 font-bold'>
-                        Project Highlights
+                        Projects
                     </div>
                     <Tabs>
                         <Tab label="music video">
@@ -92,10 +91,7 @@ export default function Home() {
                     </div>
                     <div className='grid grid-cols-2 gap-6 mx-auto max-w-screen-lg'>
                         <div className='self-center relative'>
-                            {/* <div className='absolute -top-[32px] left-1/2 transform -translate-x-1/2'>
-                            <Dino />
-                        </div> */}
-                            <Image src="/dmm-logo.svg" className="animate-[spin_3s_linear_infinite] mx-auto" alt="contact" width={350} height={350} />
+                            <Image src="/dmm-logo.svg" className="animate-[spin_3s_linear_infinite] mx-auto" alt="contact" width={250} height={250} />
                         </div>
                         <div className='flex flex-col justify-center items-start'>
                             <h3 className='text-xl font-bold'>Vu Minh Duc</h3>

@@ -6,6 +6,7 @@ import { getVideos } from '@/firebase/videos';
 import { useEffect, useState } from 'react';
 import "react-modal-video/scss/modal-video.scss";
 import { mapVids } from '@/util/util';
+import LoadingScreen from '@/components/LoadingScreen/LoadingScreen';
 export default function Projects() {
     const [videos, setVideos] = useState([]);
     useEffect(() => {
@@ -13,6 +14,7 @@ export default function Projects() {
     }, []);
     return (
         <>
+            <LoadingScreen duration={500} />
             <section className="videos-preview">
                 <div className='flex justify-center text-2xl mb-4 font-bold'>
                     Project Highlights

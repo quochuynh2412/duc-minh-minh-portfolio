@@ -18,7 +18,7 @@ export default function Header() {
                             <Link href="/projects">projects</Link>
                         </li>
                         <li>
-                            <Link href="/contact">about</Link>
+                            <Link href="/about">about</Link>
                         </li>
                         <li>
                             <Link href="/contact">contact</Link>

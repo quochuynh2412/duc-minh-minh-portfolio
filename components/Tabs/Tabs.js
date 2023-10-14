@@ -31,13 +31,19 @@ export class Tabs extends React.Component {
 export const TabButtons = ({ buttons, changeTab, activeTab }) => {
 
     return (
-        <div className={styles.tabButtons + " flex justify-center gap-4"}>
+        <div className={styles.tabButtons + " flex justify-center gap-0 sm:gap-4"}>
             {buttons.map((button, index) => (
                 <React.Fragment key={index}>
-                    <button className={button === activeTab ? styles.button + ' ' + styles.active : styles.button} onClick={() => changeTab(button)}>{button}</button>
+                    <button
+                        className={`${button === activeTab ? 'pointer-events-auto font-normal text-xs sm:text-base bg-transparent py-2 px-4 rounded transition duration-200 text-[#ffca39]' : 'pointer-events-auto font-normal text-xs sm:text-base bg-transparent py-2 px-4 rounded text-opacity-100 transition duration-200 hover:text-opacity-50 hover:text-[#ffca39]'
+                            }`}
+                        onClick={() => changeTab(button)}
+                    >
+                        {button}
+                    </button>
                     {
                         index != buttons.length - 1 ?
-                            (<div className="flex items-center text-sm">
+                            (<div className="flex items-center text-xs sm:text-sm">
                                 {/* <FontAwesomeIcon className={styles.icon} icon={faCircle} /> */}
                                 /
                             </div>) : null
