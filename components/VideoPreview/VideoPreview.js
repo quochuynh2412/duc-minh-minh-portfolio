@@ -14,12 +14,23 @@ function VideoPreview({ video }) {
     const playerRef = useRef();
     const [isOpen, setOpen] = useState(false);
     const [url, setUrl] = useState('');
+    const [className, setClassName] = useState('video');
+    const [autoplaySuspended, setAutoplaySuspended] = useState(false);
     function onMouseOver() {
-        playerRef.current.videoRef.current.play();
+        if (!autoplaySuspended) {
+            try {
+                playerRef.current.videoRef.current.play();
+            } catch (e) {
+                setAutoplaySuspended(true);
+                setClassName('video-autoplay-suspended');
+            }
+        }
     }
 
     function onMouseOut() {
-        playerRef.current.videoRef.current.pause();
+        if (!autoplaySuspended) {
+            playerRef.current.videoRef.current.pause();
+        }
     }
     useEffect(() => {
         getImageUrl(`/thumbnails/${video.id}.${video.thumbnailType}`).then((url) => {
@@ -29,7 +40,7 @@ function VideoPreview({ video }) {
 
     return (
         <>
-            <div className='video m-4' onMouseOver={onMouseOver} onMouseOut={onMouseOut} onClick={() => setOpen(true)}>
+            <div className={`${className} m-4`} onMouseOver={onMouseOver} onMouseOut={onMouseOut} onClick={() => setOpen(true)}>
                 {url == '' ? <div className='w-full h-full bg-gray-300 animate-pulse'></div> :
                     url !== null ? <img src={url} alt={video.title} /> :
                         <AdvancedImage
