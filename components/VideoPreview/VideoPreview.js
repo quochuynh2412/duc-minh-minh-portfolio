@@ -6,6 +6,7 @@ import { getImageUrl } from '@/util/util';
 import Image from 'next/image';
 import { rgbDataURL } from '@/util/util';
 import './VideoPreview.css'
+import { crop, fill, fit } from '@cloudinary/url-gen/actions/resize';
 const cld = new Cloudinary({
     cloud: {
         cloudName: 'ducminhminh'
@@ -46,7 +47,7 @@ function VideoPreview({ video }) {
                 {url == '' ? <div className='w-full h-full bg-gray-300 animate-pulse'></div> :
                     url !== null ? <Image src={url} alt={video.title} width={1920} height={1080} placeholder='blur' blurDataURL={rgbDataURL(128, 128, 128)} /> :
                         <AdvancedImage
-                            cldImg={cld.image(video.cloudinary_id).setAssetType('video').delivery('q_auto').format('auto:image')} />
+                            cldImg={cld.image(video.cloudinary_id).setAssetType('video').delivery('q_auto').format('auto:image').resize(crop().height(544).aspectRatio("16:9"))} />
                 }
                 <AdvancedVideo
                     ref={playerRef}

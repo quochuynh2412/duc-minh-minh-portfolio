@@ -27,11 +27,12 @@ export function mapVids(videos, category) {
 
 export const getImageUrl = async (path) => {
     const storageRef = ref(storage, path);
-    const url = await getDownloadURL(storageRef);
-    if (url === undefined) {
+    try {
+        const url = await getDownloadURL(storageRef);
+        return url;
+    } catch {
         return null;
     }
-    return url;
 }
 const keyStr =
     'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
