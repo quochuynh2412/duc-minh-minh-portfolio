@@ -3,6 +3,8 @@ import { Cloudinary } from '@cloudinary/url-gen';
 import { AdvancedImage, AdvancedVideo, lazyload } from '@cloudinary/react';
 import ModalVideo from 'react-modal-video';
 import { getImageUrl } from '@/util/util';
+import Image from 'next/image';
+import { rgbDataURL } from '@/util/util';
 import './VideoPreview.css'
 const cld = new Cloudinary({
     cloud: {
@@ -42,7 +44,7 @@ function VideoPreview({ video }) {
         <>
             <div className={`${className} m-4`} onMouseOver={onMouseOver} onMouseOut={onMouseOut} onClick={() => setOpen(true)}>
                 {url == '' ? <div className='w-full h-full bg-gray-300 animate-pulse'></div> :
-                    url !== null ? <img src={url} alt={video.title} /> :
+                    url !== null ? <Image src={url} alt={video.title} width={1920} height={1080} placeholder='blur' blurDataURL={rgbDataURL(128, 128, 128)} /> :
                         <AdvancedImage
                             cldImg={cld.image(video.cloudinary_id).setAssetType('video').delivery('q_auto').format('auto:image')} />
                 }
