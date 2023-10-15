@@ -1,4 +1,6 @@
 import VideoPreview from "@/components/VideoPreview/VideoPreview";
+import { storage } from "@/firebase/firebase";
+import { getDownloadURL, ref } from "firebase/storage";
 export function mapVids(videos, category) {
     if (category === 'all') {
         return videos.map((video, index) => (
@@ -21,4 +23,13 @@ export function mapVids(videos, category) {
             ));
         }
     }
+}
+
+export const getImageUrl = async (path) => {
+    const storageRef = ref(storage, path);
+    const url = await getDownloadURL(storageRef);
+    if (url === undefined) {
+        return null;
+    }
+    return url;
 }

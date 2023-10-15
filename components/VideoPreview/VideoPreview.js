@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Cloudinary } from '@cloudinary/url-gen';
 import { AdvancedImage, AdvancedVideo, lazyload } from '@cloudinary/react';
 import ModalVideo from 'react-modal-video';
+import { getImageUrl } from '@/util/util';
 import './VideoPreview.css'
 const cld = new Cloudinary({
     cloud: {
@@ -12,6 +13,7 @@ const cld = new Cloudinary({
 function VideoPreview({ video }) {
     const playerRef = useRef();
     const [isOpen, setOpen] = useState(false);
+    const [url, setUrl] = useState('');
     function onMouseOver() {
         playerRef.current.videoRef.current.play();
     }
@@ -19,12 +21,20 @@ function VideoPreview({ video }) {
     function onMouseOut() {
         playerRef.current.videoRef.current.pause();
     }
+    useEffect(() => {
+        getImageUrl(`/thumbnails/${video.id}.${video.thumbnailType}`).then((url) => {
+            setUrl(url);
+        })
+    })
 
     return (
         <>
             <div className='video m-4' onMouseOver={onMouseOver} onMouseOut={onMouseOut} onClick={() => setOpen(true)}>
-                <AdvancedImage
-                    cldImg={cld.image(video.cloudinary_id).setAssetType('video').delivery('q_auto').format('auto:image')} />
+                {url == '' ? <div className='w-full h-full bg-gray-300 animate-pulse'></div> :
+                    url !== null ? <img src={url} alt={video.title} /> :
+                        <AdvancedImage
+                            cldImg={cld.image(video.cloudinary_id).setAssetType('video').delivery('q_auto').format('auto:image')} />
+                }
                 <AdvancedVideo
                     ref={playerRef}
                     loop
