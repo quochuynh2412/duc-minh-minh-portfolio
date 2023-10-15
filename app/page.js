@@ -64,22 +64,22 @@ export default function Home() {
                     </div>
                     <Tabs>
                         <Tab label="music video">
-                            <div className="grid grid-flow-row sm:grid-cols-2 md:grid-cols-3 gap-3 max-w-[230px] sm:sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg mx-auto">
+                            <div className="grid grid-flow-row sm:grid-cols-2 md:grid-cols-3 gap-3 max-w-[290px] sm:sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg mx-auto">
                                 {mapVids('music')}
                             </div>
                         </Tab>
                         <Tab label="fashion">
-                            <div className="grid grid-flow-row sm:grid-cols-2 md:grid-cols-3 gap-3 max-w-[230px] sm:sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg mx-auto">
+                            <div className="grid grid-flow-row sm:grid-cols-2 md:grid-cols-3 gap-3 max-w-[290px] sm:sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg mx-auto">
                                 {mapVids('fashion')}
                             </div>
                         </Tab>
                         <Tab label="film">
-                            <div className="grid grid-flow-row sm:grid-cols-2 md:grid-cols-3 gap-3 max-w-[230px] sm:sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg mx-auto">
+                            <div className="grid grid-flow-row sm:grid-cols-2 md:grid-cols-3 gap-3 max-w-[290px] sm:sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg mx-auto">
                                 {mapVids('film')}
                             </div>
                         </Tab>
                         <Tab label="commercial">
-                            <div className="grid grid-flow-row sm:grid-cols-2 md:grid-cols-3 gap-3 max-w-[230px] sm:sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg mx-auto">
+                            <div className="grid grid-flow-row sm:grid-cols-2 md:grid-cols-3 gap-3 max-w-[290px] sm:sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg mx-auto">
                                 {mapVids('commercial')}
                             </div>
                         </Tab>

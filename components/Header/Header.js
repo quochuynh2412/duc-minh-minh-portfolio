@@ -1,32 +1,30 @@
-import styles from './Header.module.css';
 import React from 'react';
 import Link from 'next/link';
 export default function Header() {
     return (
-        <div className={styles.header}>
-            <nav className={styles.navbar}>
-                <div className={styles.title}>
+        <div className='fixed top-0 w-full p-4 z-50'>
+            <nav className='h-16 flex justify-between items-center'>
+                <div className='text-white flex justify-center items-center px-5 cursor-pointer'>
                     <Link href="/"
-                        className='font-bold text-white transition-colors hover:text-[#FFC939]'>
-                        {/* <Image className={styles.logo} src="/DMM.svg" width={50} height={50} alt="logo" /> */}
+                        className='font-bold text-white text-xl transition-colors hover:text-[#FFC939]'>
                         ducmvx
                     </Link>
                 </div>
                 <div>
-                    <ul className={styles.menu}>
+                    <ul className='flex px-3 gap-2 sm:gap-4 text-sm sm:text-base'>
                         <li>
-                            <Link href="/projects">projects</Link>
+                            <Link className='font-medium text-gray-400 relative transition-all duration-300 hover:text-[#ffca3998] hover:text-shadow p-2 cursor-pointer' href="/projects">projects</Link>
                         </li>
                         <li>
-                            <Link href="/about">about</Link>
+                            <Link className='font-medium text-gray-400 relative transition-all duration-300 hover:text-[#ffca3998] hover:text-shadow p-2 cursor-pointer' href="/about">about</Link>
                         </li>
                         <li>
-                            <Link href="/contact">contact</Link>
+                            <Link className='font-medium text-gray-400 relative transition-all duration-300 hover:text-[#ffca3998] hover:text-shadow p-2 cursor-pointer' href="/contact">contact</Link>
                         </li>
                     </ul>
                 </div>
             </nav>
-            <div className={styles.scroller} id='scroller'></div>
+            <div className='bg-transparent' id='scroller'></div>
         </div>
     );
 }

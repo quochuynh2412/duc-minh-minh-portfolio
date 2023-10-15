@@ -27,7 +27,7 @@ export default class LoadingScreen extends React.Component {
                     <img src="/dmm-logo.svg" alt="logo" className="w-8 animate-spin" />
                     {/* loading text */}
                     <div className="text-white text-xl font-bold mt-4">Loading</div>
-                    <div className="text-white text-sm font-normal mt-4">This website performs best on desktop devices and Chrome browser</div>
+                    <div className="text-white text-sm font-normal mt-4 max-w-[80vw] sm:max-w-full text-center">This website performs best on desktop devices and Chrome browser</div>
                 </div>
             </animated.div>
         )

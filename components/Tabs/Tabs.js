@@ -31,7 +31,7 @@ export class Tabs extends React.Component {
 export const TabButtons = ({ buttons, changeTab, activeTab }) => {
 
     return (
-        <div className={styles.tabButtons + " flex justify-center gap-0 sm:gap-4"}>
+        <div className={"mb-12 flex justify-center gap-0 sm:gap-4 max-w-[80vw] flex-wrap shrink-0 mx-auto"}>
             {buttons.map((button, index) => (
                 <React.Fragment key={index}>
                     <button

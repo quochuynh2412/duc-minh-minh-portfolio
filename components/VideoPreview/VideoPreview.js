@@ -53,6 +53,7 @@ function VideoPreview({ video }) {
                     ref={playerRef}
                     loop
                     muted
+                    playsInline
                     width="100%"
                     cldVid={cld.video(video.cloudinary_id).effect('e_preview:duration_4').delivery('q_auto').format('auto')}
                     plugins={[lazyload()]} />

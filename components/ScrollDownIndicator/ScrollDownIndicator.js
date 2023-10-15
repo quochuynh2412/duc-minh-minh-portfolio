@@ -21,7 +21,7 @@ const ScrollDownIndicator = () => {
 
     return (
         <div
-            className={`fixed bottom-5 left-1/2 transform -translate-x-1/2 text-center transition-opacity ${isVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'
+            className={`fixed bottom-5 left-1/2 transform -translate-x-1/2 text-center transition-opacity z-50 ${isVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'
                 }`}
         >
             <p className="text-gray-500 text-sm">Scroll down for more</p>
