@@ -13,13 +13,19 @@ export default function Header() {
                 <div>
                     <ul className='flex px-3 gap-2 sm:gap-4 text-sm sm:text-base'>
                         <li>
-                            <Link className='font-medium text-gray-400 relative transition-all duration-300 hover:text-[#ffca3998] hover:text-shadow p-2 cursor-pointer' href="/projects">projects</Link>
+                            <Link className='font-medium text-gray-400 relative transition-all duration-300 hover:text-[#ffca3998] hover:text-shadow p-2 cursor-pointer'
+                                href="/projects"
+                                scroll={true}>projects</Link>
                         </li>
                         <li>
-                            <Link className='font-medium text-gray-400 relative transition-all duration-300 hover:text-[#ffca3998] hover:text-shadow p-2 cursor-pointer' href="/about">about</Link>
+                            <Link className='font-medium text-gray-400 relative transition-all duration-300 hover:text-[#ffca3998] hover:text-shadow p-2 cursor-pointer'
+                                href="/about"
+                                scroll={true}>about</Link>
                         </li>
                         <li>
-                            <Link className='font-medium text-gray-400 relative transition-all duration-300 hover:text-[#ffca3998] hover:text-shadow p-2 cursor-pointer' href="/contact">contact</Link>
+                            <Link className='font-medium text-gray-400 relative transition-all duration-300 hover:text-[#ffca3998] hover:text-shadow p-2 cursor-pointer'
+                                href="/contact"
+                                scroll={true}>contact</Link>
                         </li>
                     </ul>
                 </div>
