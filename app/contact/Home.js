@@ -18,7 +18,9 @@ function VideoText({ clicked, ...props }) {
     const vidUrl = cld.video("great_minds_think_alike__fashion_film_720p_g9jory").resize(crop().width(1080).aspectRatio(4.7)).setAssetType('video').delivery('q_auto').format('auto').toURL();
     const [video] = useState(() => Object.assign(document.createElement('video'), { src: vidUrl, crossOrigin: 'Anonymous', loop: true, muted: true }))
     useEffect(() => {
-        void (clicked && video.play());
+        if (clicked) {
+            video.play();
+        }
         return;
     }, [video, clicked])
     return (
