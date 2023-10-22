@@ -1,7 +1,9 @@
+/* header.module.css */
 .header {
     font-size: 2em;
 }
 
+/* videos.module.css */
 .videos {
     list-style: none;
     padding: 0;
@@ -11,93 +13,100 @@
     grid-gap: 3em;
 }
 
+/* videoTitle.module.css */
 .videoTitle {
     font-size: 1.4em;
-    margin: .4em 0 0;
+    margin: 0.4em 0 0;
 }
 
+/* video.module.css */
 .video {
-
     position: relative;
-    transition: all .4s ease;
+    transition: all 0.4s ease;
     cursor: pointer;
-
-    img {
-        position: relative;
-        z-index: 1;
-    }
-
-    video {
-        position: absolute;
-        top: 0;
-        left: 0;
-        opacity: 0;
-        z-index: 0;
-        width: 100%;
-        height: auto;
-    }
-
-    &:hover {
-        transform: scale(1.1);
-        -webkit-transform: scale(1.1);
-        -moz-transform: scale(1.1);
-        -o-transform: scale(1.1);
-        box-shadow: 0 0 145px -49px rgba(255, 255, 255, 0.62);
-        -webkit-box-shadow: 0 0 145px -49px rgba(255, 255, 255, 0.62);
-        -moz-box-shadow: 0 0 145px -49px rgba(255, 255, 255, 0.62);
-
-        img {
-            opacity: 0;
-        }
-
-        video {
-            z-index: 2;
-            opacity: 1;
-        }
-
-    }
-
 }
 
-.video-autoplay-suspended {
-
+/* video.module.css - img within .video */
+.video img {
     position: relative;
-    transition: all .4s ease;
+    z-index: 1;
+}
+
+/* video.module.css - video within .video */
+.video video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: 0;
+    width: 100%;
+    height: auto;
+}
+
+/* video.module.css - :hover for .video */
+.video:hover {
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    box-shadow: 0 0 145px -49px rgba(255, 255, 255, 0.62);
+    -webkit-box-shadow: 0 0 145px -49px rgba(255, 255, 255, 0.62);
+    -moz-box-shadow: 0 0 145px -49px rgba(255, 255, 255, 0.62);
+}
+
+/* video.module.css - :hover for .video - img within .video */
+.video:hover img {
+    opacity: 0;
+}
+
+/* video.module.css - :hover for .video - video within .video */
+.video:hover video {
+    z-index: 2;
+    opacity: 1;
+}
+
+/* video-autoplay-suspended.module.css */
+.video-autoplay-suspended {
+    position: relative;
+    transition: all 0.4s ease;
     cursor: pointer;
+}
 
-    img {
-        position: relative;
-        z-index: 1;
-    }
+/* video-autoplay-suspended.module.css - img within .video-autoplay-suspended */
+.video-autoplay-suspended img {
+    position: relative;
+    z-index: 1;
+}
 
-    video {
-        position: absolute;
-        top: 0;
-        left: 0;
-        opacity: 0;
-        z-index: 0;
-        width: 100%;
-        height: auto;
-    }
+/* video-autoplay-suspended.module.css - video within .video-autoplay-suspended */
+.video-autoplay-suspended video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: 0;
+    width: 100%;
+    height: auto;
+}
 
-    &:hover {
-        transform: scale(1.1);
-        -webkit-transform: scale(1.1);
-        -moz-transform: scale(1.1);
-        -o-transform: scale(1.1);
-        box-shadow: 0 0 145px -49px rgba(255, 255, 255, 0.62);
-        -webkit-box-shadow: 0 0 145px -49px rgba(255, 255, 255, 0.62);
-        -moz-box-shadow: 0 0 145px -49px rgba(255, 255, 255, 0.62);
+/* video-autoplay-suspended.module.css - :hover for .video-autoplay-suspended */
+.video-autoplay-suspended:hover {
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    box-shadow: 0 0 145px -49px rgba(255, 255, 255, 0.62);
+    -webkit-box-shadow: 0 0 145px -49px rgba(255, 255, 255, 0.62);
+    -moz-box-shadow: 0 0 145px -49px rgba(255, 255, 255, 0.62);
+}
 
-        img {
-            opacity: 1;
-        }
+/* video-autoplay-suspended.module.css - :hover for .video-autoplay-suspended - img within .video-autoplay-suspended */
+.video-autoplay-suspended:hover img {
+    opacity: 1;
+}
 
-        video {
-            z-index: 2;
-            opacity: 0;
-        }
-
-    }
-
+/* video-autoplay-suspended.module.css - :hover for .video-autoplay-suspended - video within .video-autoplay-suspended */
+.video-autoplay-suspended:hover video {
+    z-index: 2;
+    opacity: 0;
 }
