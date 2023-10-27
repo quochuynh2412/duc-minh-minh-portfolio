@@ -1,13 +1,13 @@
 'use client'
 import { Tab, Tabs } from '@/components/Tabs/Tabs';
-import { getVideos } from '@/firebase/videos';
+import { getAllVideos } from '@/firebase/videos';
 import { useEffect, useState } from 'react';
 import "react-modal-video/scss/modal-video.scss";
 import { mapVids } from '@/util/util';
 export default function Home() {
     const [videos, setVideos] = useState([]);
     useEffect(() => {
-        getVideos().then(videos => setVideos(videos));
+        getAllVideos().then(videos => setVideos(videos));
     }, []);
     return (
         <section className="videos-preview">

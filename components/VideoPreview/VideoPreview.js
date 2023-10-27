@@ -36,7 +36,7 @@ function VideoPreview({ video }) {
         }
     }
     useEffect(() => {
-        getImageUrl(`/thumbnails/${video.id}.${video.thumbnailType}`).then((url) => {
+        getImageUrl(`${video.thumbnail}`).then((url) => {
             setUrl(url);
         })
     })
